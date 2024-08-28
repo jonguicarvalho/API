@@ -1,0 +1,14 @@
+// .sequelizerc.cjs
+const { config } = require('dotenv');
+config();
+
+
+const { resolve } = require('path');//assim da pra usar so .resolve
+//const path = require('path') path.resolve
+
+module.exports = {
+  config: resolve(__dirname, 'src', 'config', 'database.js'),
+  'models-path': resolve(__dirname, 'src', 'models'),
+  'migrations-path': resolve(__dirname, 'src', 'database', 'migrations'),
+  'seeders-path': resolve(__dirname, 'src', 'database', 'seeds'),
+};
